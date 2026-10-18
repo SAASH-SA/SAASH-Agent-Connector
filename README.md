@@ -1,6 +1,6 @@
 # SAASH Agent Connector
 
-Provider-neutral bilingual connector for Saudi business, commerce, workforce and legal capabilities through SAASH Business Engine, SAASH Workforce Engine and SAASH Legal Engine.
+Provider-neutral bilingual connector for Saudi government, citizen, business, commerce, workforce and legal capabilities through SAASH Government Engine, SAASH Business Engine, SAASH Workforce Engine and SAASH Legal Engine.
 
 Public source and releases: https://github.com/SAASH-SA/SAASH-Agent-Connector
 
@@ -22,6 +22,7 @@ Public source and releases: https://github.com/SAASH-SA/SAASH-Agent-Connector
 - Legal: Najiz (ناجز), Taradhi (تراضي), Moeen (معين), legal knowledge and bounded preparation.
 - Workforce and Ministry services: Saudi Ministry of Human Resources and Social Development (HRSD/MHRSD / وزارة الموارد البشرية والتنمية الاجتماعية), Qiwa (قوى), GOSI (التأمينات الاجتماعية), Mudad (مدد), Ajeer (أجير), and Musaned (مساند) preparation.
 - Business services: Ministry of Commerce (وزارة التجارة), Saudi Business Center (المركز السعودي للأعمال), MISA, ZATCA, Balady, Monsha'at and SAIP lifecycle, compliance, document and workflow capabilities.
+- Government and citizen services: GOV.SA, Absher, Nafath-aware owner handoff, Tawakkalna Services, Sehhaty, Noor, social support, Sakani, SPL National Address and Nusuk preparation and workflow capabilities. Authentication, OTP, payment, signature and binding submission remain owner-controlled.
 
 Service availability comes from the live manifest. Preparation or guidance is never represented as completed government execution.
 
@@ -30,6 +31,7 @@ Indexable capability-family pages:
 - Saudi legal agent / وكيل الخدمات القانونية السعودية: https://saash-gateway.vercel.app/saudi-legal-agent
 - Saudi workforce and HRSD agent / وكيل خدمات العمل والموارد البشرية: https://saash-gateway.vercel.app/saudi-workforce-agent
 - Saudi business and enterprise agent / وكيل خدمات الأعمال والمنشآت: https://saash-gateway.vercel.app/saudi-business-agent
+- Saudi government and citizen services agent / وكيل الخدمات الحكومية والمواطن: https://saash-gateway.vercel.app/saudi-government-agent
 - Verified accountless agent learning / تعلم خبرات الوكلاء دون حساب: https://saash-gateway.vercel.app/agent-learning
 
 ## Use

@@ -1,8 +1,8 @@
 {
   "schema": "saash.agent-connector.install.v1",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "name": "SAASH Agent Connector",
-  "description": "Saudi business, commerce, workforce and legal service discovery in Arabic and English.",
+  "description": "Saudi government, citizen, business, workforce and legal service discovery in Arabic and English.",
   "base_url": "https://saash-gateway.vercel.app",
   "discovery_path": "/api/v1/discovery",
   "manifest_path": "/.well-known/saash-agent-connector.json",
@@ -21,6 +21,7 @@
     "example_saash-workforce-engine_new_capability_prefix": "workforce.learned.",
     "example_saash-legal-engine_new_capability_prefix": "legal.learned.",
     "example_saash-business-engine_new_capability_prefix": "business.learned.",
+    "example_saash-government-engine_new_capability_prefix": "government.learned.",
     "example_saash-accounting-engine_new_capability_prefix": "accounting.learned.",
     "existing_capability_improvement_requires_same_invoked_capability": true,
     "invocation_must_match_receipt": true
@@ -51,6 +52,7 @@
     "legal": "https://saash-gateway.vercel.app/saudi-legal-agent",
     "workforce": "https://saash-gateway.vercel.app/saudi-workforce-agent",
     "business": "https://saash-gateway.vercel.app/saudi-business-agent",
+    "government": "https://saash-gateway.vercel.app/saudi-government-agent",
     "agent_learning": "https://saash-gateway.vercel.app/agent-learning"
   }
 }

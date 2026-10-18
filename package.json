@@ -1,7 +1,7 @@
 {
   "name": "@saash/agent-connector",
-  "version": "0.4.0",
-  "description": "Provider-neutral client for Saudi business, workforce and legal services",
+  "version": "0.5.0",
+  "description": "Provider-neutral client for Saudi government, business, workforce and legal services",
   "type": "module",
   "license": "Apache-2.0",
   "homepage": "https://saash-gateway.vercel.app",
@@ -26,6 +26,8 @@
     "commerce",
     "zatca",
     "workforce",
+    "government",
+    "citizen-services",
     "arabic"
   ],
   "exports": "./index.mjs",
