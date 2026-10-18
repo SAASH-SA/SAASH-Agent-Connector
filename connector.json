@@ -1,6 +1,6 @@
 {
   "schema": "saash.agent-connector.install.v1",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "name": "SAASH Agent Connector",
   "description": "Saudi government, citizen, business, workforce and legal service discovery in Arabic and English.",
   "base_url": "https://saash-gateway.vercel.app",
@@ -10,6 +10,9 @@
   "openapi_path": "/openapi.json",
   "apis_json_path": "/.well-known/apis.json",
   "api_catalog_path": "/.well-known/api-catalog",
+  "service_directory_path": "/services",
+  "llms_full_path": "/llms-full.txt",
+  "sitemap_path": "/sitemap.xml",
   "resolve_path": "/api/v1/connector/resolve",
   "grow_invoke_path": "/api/v1/connector/invoke",
   "grow_experience_path": "/api/v1/grow/experiences",
@@ -49,6 +52,7 @@
     "planning_budget_not_sla": true
   },
   "capability_pages": {
+    "live_directory": "https://saash-gateway.vercel.app/services",
     "legal": "https://saash-gateway.vercel.app/saudi-legal-agent",
     "workforce": "https://saash-gateway.vercel.app/saudi-workforce-agent",
     "business": "https://saash-gateway.vercel.app/saudi-business-agent",

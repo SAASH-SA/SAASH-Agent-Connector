@@ -26,6 +26,11 @@ Public source and releases: https://github.com/SAASH-SA/SAASH-Agent-Connector
 
 Service availability comes from the live manifest. Preparation or guidance is never represented as completed government execution.
 
+The live capability directory at https://saash-gateway.vercel.app/services publishes one bilingual, indexable page per current capability. Its sitemap and full agent-readable catalogue are regenerated from the same live engine contracts, so newly released skills become discoverable without manually editing this package:
+
+- https://saash-gateway.vercel.app/sitemap.xml
+- https://saash-gateway.vercel.app/llms-full.txt
+
 Indexable capability-family pages:
 
 - Saudi legal agent / وكيل الخدمات القانونية السعودية: https://saash-gateway.vercel.app/saudi-legal-agent
