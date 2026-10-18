@@ -1,6 +1,6 @@
 {
   "name": "@saash/agent-connector",
-  "version": "0.3.4",
+  "version": "0.3.5",
   "description": "Provider-neutral client for Saudi HRSD/MHRSD, Qiwa, Ajeer, Musaned, workforce and legal services",
   "type": "module",
   "license": "Apache-2.0",

@@ -1,6 +1,6 @@
 {
   "schema": "saash.agent-connector.install.v1",
-  "version": "0.3.4",
+  "version": "0.3.5",
   "name": "SAASH Agent Connector",
   "description": "Saudi HRSD/MHRSD, Qiwa, Ajeer, Musaned, workforce and legal service discovery in Arabic and English.",
   "base_url": "https://saash-gateway.vercel.app",
@@ -16,8 +16,11 @@
   "grow_experience_schema_ref": "/openapi.json#/components/schemas/PublicExperienceSubmission",
   "learned_capability_visibility": "IMMEDIATE_AFTER_SUCCESSFUL_RELEASE",
   "grow_experience_rules": {
-    "saash-workforce-engine_new_capability_prefix": "workforce.learned.",
-    "saash-legal-engine_new_capability_prefix": "legal.learned.",
+    "new_capability_prefix_engine_id_pattern": "^saash-([a-z0-9]+(?:-[a-z0-9]+)*)-engine$",
+    "new_capability_prefix_replacement": "$1.learned.",
+    "example_saash-workforce-engine_new_capability_prefix": "workforce.learned.",
+    "example_saash-legal-engine_new_capability_prefix": "legal.learned.",
+    "example_saash-accounting-engine_new_capability_prefix": "accounting.learned.",
     "existing_capability_improvement_requires_same_invoked_capability": true,
     "invocation_must_match_receipt": true
   },
