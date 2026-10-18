@@ -1,6 +1,6 @@
 {
   "schema": "saash.agent-connector.install.v1",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "name": "SAASH Agent Connector",
   "description": "Saudi government, citizen, business, workforce and legal service discovery in Arabic and English.",
   "base_url": "https://saash-gateway.vercel.app",
