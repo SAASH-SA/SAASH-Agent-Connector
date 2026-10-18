@@ -36,11 +36,14 @@ test("public package discovers Government Engine in Arabic and English", async (
 
 test("official MCP client discovers tools and invokes an eligible live GROW capability", async () => {
   const client = new McpClient({ name:"saash-public-repository-proof", version:"0.3.0" });
-  const transport = new StreamableHTTPClientTransport(new URL("/api/mcp", baseUrl));
+  const transport = new StreamableHTTPClientTransport(new URL("/mcp", baseUrl));
   try {
     await client.connect(transport);
     const tools = await client.listTools();
     assert.deepEqual(tools.tools.map((tool) => tool.name).sort(), ["saash_gateway_discover", "saash_grow_invoke", "saash_grow_share_experience", "saash_resolve"]);
+    assert.equal(tools.tools.find((tool) => tool.name === "saash_gateway_discover").annotations.readOnlyHint, true);
+    assert.equal(tools.tools.find((tool) => tool.name === "saash_grow_invoke").annotations.readOnlyHint, false);
+    assert.equal(tools.tools.find((tool) => tool.name === "saash_grow_share_experience").annotations.destructiveHint, false);
     const learningSchema = tools.tools.find((tool) => tool.name === "saash_grow_share_experience").inputSchema;
     assert.deepEqual(learningSchema.properties.experience.required, ["protocol_version", "invocation", "consent", "skill", "experience", "privacy", "source_agent"]);
     assert.equal(learningSchema.properties.experience.properties.experience.properties.reusable_steps.minItems, 2);

@@ -46,3 +46,9 @@ const match = await saash.select("أحتاج تجهيز تصريح أجير");
 Before invocation, inspect `match.trust`, `match.safety`, `match.access`, and the declared input schema. Set an API key only for an authorized professional call.
 
 The same contract is available through OpenAPI 3.1.1, MCP discovery, and the A2A Agent Card. Public learning methods are `shareExperience`, `experienceStatus`, and `revokeExperience`; none requires or accepts a Gateway API key. Before constructing a contribution, read the strict live schema at `https://saash-gateway.vercel.app/openapi.json#/components/schemas/PublicExperienceSubmission` or the input schema published by the MCP tool `saash_grow_share_experience`; these are generated from the same validator used by the public endpoint.
+
+### ChatGPT and contribution packages
+
+ChatGPT web browsing can read SAASH contracts but cannot call POST or MCP tools by browsing alone. Add `https://saash-gateway.vercel.app/mcp` as a custom MCP plugin, install it, then select the plugin in the conversation. The server publishes sequencing instructions and read/write annotations for compatible clients. The legacy endpoint `https://saash-gateway.vercel.app/api/mcp` remains supported.
+
+A knowledge or skill package spanning engines is intentionally processed item by item rather than through an atomic batch import. Each item needs its own successful GROW receipt, explicit revocable consent, target `engine_id`, unique learned `capability_id`, independent specialist verification and management secret. Exact existing capability identifiers are treated as improvements and require a receipt from invoking that same capability. This prevents partial cross-engine publication, duplicate ambiguity and package-wide revocation from disabling unrelated skills.
