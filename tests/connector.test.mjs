@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { readFile } from "node:fs/promises";
 import test from "node:test";
 import { createSaashConnector } from "../index.mjs";
 
@@ -21,4 +22,14 @@ test("connector exposes accountless experience contribution and management witho
   await connector.revokeExperience({experience_id:"aexp_123",revocation_token:"sgrv_secret"});
   assert.deepEqual(requests.map(item=>new URL(item.url).pathname),["/api/v1/grow/experiences","/api/v1/grow/experiences/aexp_123/status","/api/v1/grow/experiences/aexp_123/revoke"]);
   assert.equal(requests.every(item=>item.options.headers.authorization===undefined),true);
+});
+
+test("packaged metadata matches the expanded provider-aligned GROW policy", async () => {
+  const metadata = JSON.parse(await readFile(new URL("../connector.json", import.meta.url), "utf8"));
+  const readme = await readFile(new URL("../README.md", import.meta.url), "utf8");
+  assert.equal(metadata.version, "0.3.3");
+  assert.equal(metadata.capacity_policy.per_client_network_daily_invocation_limit, null);
+  assert.equal(metadata.capacity_policy.provider_aligned_monthly_accepted_invocation_budget, 800000);
+  assert.match(readme, /no per-client-network daily quota/);
+  assert.doesNotMatch(readme, /1000 requests per client network daily/);
 });

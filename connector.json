@@ -1,5 +1,6 @@
 {
   "schema": "saash.agent-connector.install.v1",
+  "version": "0.3.3",
   "name": "SAASH Agent Connector",
   "description": "Saudi HRSD/MHRSD, Qiwa, Ajeer, Musaned, workforce and legal service discovery in Arabic and English.",
   "base_url": "https://saash-gateway.vercel.app",
@@ -32,5 +33,18 @@
   },
   "access_stage": "GROW",
   "price_minor": 0,
-  "payment_collection": false
+  "payment_collection": false,
+  "capacity_policy": {
+    "per_client_network_daily_invocation_limit": null,
+    "provider_aligned_monthly_accepted_invocation_budget": 800000,
+    "operating_reserve_percent": 20,
+    "client_burst_per_minute": 60,
+    "global_burst_per_minute": 600,
+    "planning_budget_not_sla": true
+  },
+  "capability_pages": {
+    "legal": "https://saash-gateway.vercel.app/saudi-legal-agent",
+    "workforce": "https://saash-gateway.vercel.app/saudi-workforce-agent",
+    "agent_learning": "https://saash-gateway.vercel.app/agent-learning"
+  }
 }
