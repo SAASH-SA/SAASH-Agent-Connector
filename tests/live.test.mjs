@@ -26,6 +26,10 @@ test("official MCP client discovers tools and invokes an eligible live GROW capa
     const learningSchema = tools.tools.find((tool) => tool.name === "saash_grow_share_experience").inputSchema;
     assert.deepEqual(learningSchema.properties.experience.required, ["protocol_version", "invocation", "consent", "skill", "experience", "privacy", "source_agent"]);
     assert.equal(learningSchema.properties.experience.properties.experience.properties.reusable_steps.minItems, 2);
+    const openapi = await (await fetch(`${baseUrl}/openapi.json`)).json();
+    const learningRules = openapi.paths["/api/v1/grow/experiences"].post["x-saash-public-learning-rules"];
+    assert.equal(learningRules.new_capability_prefixes["saash-workforce-engine"], "workforce.learned.");
+    assert.equal(learningRules.existing_capability_improvement_requires_same_invoked_capability, true);
     const result = await client.callTool({ name:"saash_grow_invoke", arguments:{ engine_id:"saash-workforce-engine", capability_id:"ajeer.permit.prepare", payload:{ synthetic_fixture:true }, request_id:`github-proof-${Date.now()}`, grow_acknowledgement:{ no_secrets:true, no_personal_data:true, no_external_or_binding_effect:true } } });
     assert.equal(result.isError, false);
     assert.equal(result.structuredContent.gateway.price_minor, 0);

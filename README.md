@@ -9,6 +9,7 @@ Public source and releases: https://github.com/SAASH-SA/SAASH-Agent-Connector
 - Discovery and intent resolution are public, account-free and free of charge.
 - Non-effect, non-binding professional invocation is account-free, rate-limited and requires an explicit no-secret/no-personal-data/no-effect acknowledgement.
 - A successful public invocation returns a signed single-use receipt. A compatible agent may submit a sanitized, explicitly shared `saash.agent-experience.v2` contribution without an account; another specialist engine must verify it before publication.
+- The invocation response publishes machine-readable contribution constraints. New capabilities use `workforce.learned.*` or `legal.learned.*` for the matching engine; an improvement to an existing capability requires a receipt from invoking that same capability.
 - Public invocation has a high abuse-protection ceiling of 1000 requests per client network daily. Experience contribution is separately limited to 20 daily.
 - Every accepted public contribution returns a one-time management secret for private status checks and contributor revocation. Store it securely; the service stores only its hash.
 - Effectful, binding and owner-controlled invocation remains authorization-gated.

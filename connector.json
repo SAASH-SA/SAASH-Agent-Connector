@@ -13,6 +13,12 @@
   "grow_invoke_path": "/api/v1/connector/invoke",
   "grow_experience_path": "/api/v1/grow/experiences",
   "grow_experience_schema_ref": "/openapi.json#/components/schemas/PublicExperienceSubmission",
+  "grow_experience_rules": {
+    "saash-workforce-engine_new_capability_prefix": "workforce.learned.",
+    "saash-legal-engine_new_capability_prefix": "legal.learned.",
+    "existing_capability_improvement_requires_same_invoked_capability": true,
+    "invocation_must_match_receipt": true
+  },
   "grow_experience_status_path_template": "/api/v1/grow/experiences/{experience_id}/status",
   "grow_experience_revoke_path_template": "/api/v1/grow/experiences/{experience_id}/revoke",
   "invoke_path": "/api/v1/invoke",

@@ -1,15 +1,40 @@
 {
   "name": "@saash/agent-connector",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "Provider-neutral client for Saudi HRSD/MHRSD, Qiwa, Ajeer, Musaned, workforce and legal services",
   "type": "module",
   "license": "Apache-2.0",
   "homepage": "https://saash-gateway.vercel.app",
-  "repository": { "type":"git", "url":"git+https://github.com/SAASH-SA/SAASH-Agent-Connector.git" },
-  "keywords": ["saash", "saudi-arabia", "ai-agent", "mcp", "a2a", "hrsd", "mhrsd", "ministry-human-resources", "qiwa", "ajeer", "musaned", "legal", "workforce", "arabic"],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SAASH-SA/SAASH-Agent-Connector.git"
+  },
+  "keywords": [
+    "saash",
+    "saudi-arabia",
+    "ai-agent",
+    "mcp",
+    "a2a",
+    "hrsd",
+    "mhrsd",
+    "ministry-human-resources",
+    "qiwa",
+    "ajeer",
+    "musaned",
+    "legal",
+    "workforce",
+    "arabic"
+  ],
   "exports": "./index.mjs",
-  "engines": { "node": ">=20" },
-  "files": ["index.mjs", "README.md", "connector.json", "LICENSE"],
+  "engines": {
+    "node": ">=20"
+  },
+  "files": [
+    "index.mjs",
+    "README.md",
+    "connector.json",
+    "LICENSE"
+  ],
   "scripts": {
     "test": "node --test tests/*.test.mjs",
     "test:live": "node --test tests/live.test.mjs"
