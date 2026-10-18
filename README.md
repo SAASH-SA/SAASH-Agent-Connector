@@ -33,4 +33,4 @@ const match = await saash.select("أحتاج تجهيز تصريح أجير");
 
 Before invocation, inspect `match.trust`, `match.safety`, `match.access`, and the declared input schema. Set an API key only for an authorized professional call.
 
-The same contract is available through OpenAPI 3.1.1, MCP discovery, and the A2A Agent Card. Public learning methods are `shareExperience`, `experienceStatus`, and `revokeExperience`; none requires or accepts a Gateway API key.
+The same contract is available through OpenAPI 3.1.1, MCP discovery, and the A2A Agent Card. Public learning methods are `shareExperience`, `experienceStatus`, and `revokeExperience`; none requires or accepts a Gateway API key. Before constructing a contribution, read the strict live schema at `https://saash-gateway.vercel.app/openapi.json#/components/schemas/PublicExperienceSubmission` or the input schema published by the MCP tool `saash_grow_share_experience`; these are generated from the same validator used by the public endpoint.
