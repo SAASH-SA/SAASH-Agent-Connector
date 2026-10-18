@@ -17,12 +17,12 @@ test("public package finds SAASH in Arabic and English", async () => {
 });
 
 test("official MCP client discovers tools and invokes an eligible live GROW capability", async () => {
-  const client = new McpClient({ name:"saash-public-repository-proof", version:"0.2.0" });
+  const client = new McpClient({ name:"saash-public-repository-proof", version:"0.3.0" });
   const transport = new StreamableHTTPClientTransport(new URL("/api/mcp", baseUrl));
   try {
     await client.connect(transport);
     const tools = await client.listTools();
-    assert.deepEqual(tools.tools.map((tool) => tool.name).sort(), ["saash_gateway_discover", "saash_grow_invoke", "saash_resolve"]);
+    assert.deepEqual(tools.tools.map((tool) => tool.name).sort(), ["saash_gateway_discover", "saash_grow_invoke", "saash_grow_share_experience", "saash_resolve"]);
     const result = await client.callTool({ name:"saash_grow_invoke", arguments:{ engine_id:"saash-workforce-engine", capability_id:"ajeer.permit.prepare", payload:{ synthetic_fixture:true }, request_id:`github-proof-${Date.now()}`, grow_acknowledgement:{ no_secrets:true, no_personal_data:true, no_external_or_binding_effect:true } } });
     assert.equal(result.isError, false);
     assert.equal(result.structuredContent.gateway.price_minor, 0);

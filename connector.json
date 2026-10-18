@@ -9,11 +9,16 @@
   "openapi_path": "/openapi.json",
   "resolve_path": "/api/v1/connector/resolve",
   "grow_invoke_path": "/api/v1/connector/invoke",
+  "grow_experience_path": "/api/v1/grow/experiences",
+  "grow_experience_status_path_template": "/api/v1/grow/experiences/{experience_id}/status",
+  "grow_experience_revoke_path_template": "/api/v1/grow/experiences/{experience_id}/revoke",
   "invoke_path": "/api/v1/invoke",
   "authentication": {
     "discovery": "NONE",
     "resolution": "NONE",
     "safe_grow_invocation": "NONE_WITH_EXPLICIT_ACKNOWLEDGEMENT_AND_RATE_LIMIT",
+    "sanitized_experience_contribution": "NONE_WITH_SIGNED_SINGLE_USE_RECEIPT",
+    "experience_status_and_revocation": "ONE_TIME_MANAGEMENT_SECRET_RETURNED_AT_ACCEPTANCE",
     "effectful_or_binding_invocation": "BEARER_GATEWAY_API_KEY"
   },
   "access_stage": "GROW",

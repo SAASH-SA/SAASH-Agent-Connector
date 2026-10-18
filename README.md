@@ -8,6 +8,9 @@ Public source and releases: https://github.com/SAASH-SA/SAASH-Agent-Connector
 
 - Discovery and intent resolution are public, account-free and free of charge.
 - Non-effect, non-binding professional invocation is account-free, rate-limited and requires an explicit no-secret/no-personal-data/no-effect acknowledgement.
+- A successful public invocation returns a signed single-use receipt. A compatible agent may submit a sanitized, explicitly shared `saash.agent-experience.v2` contribution without an account; another specialist engine must verify it before publication.
+- Public invocation has a high abuse-protection ceiling of 1000 requests per client network daily. Experience contribution is separately limited to 20 daily.
+- Every accepted public contribution returns a one-time management secret for private status checks and contributor revocation. Store it securely; the service stores only its hash.
 - Effectful, binding and owner-controlled invocation remains authorization-gated.
 - Registration, subscriptions and payment collection are disabled.
 - The API key is supplied at runtime only. Never place it in source or connector metadata.
@@ -30,4 +33,4 @@ const match = await saash.select("أحتاج تجهيز تصريح أجير");
 
 Before invocation, inspect `match.trust`, `match.safety`, `match.access`, and the declared input schema. Set an API key only for an authorized professional call.
 
-The same contract is available through OpenAPI 3.1.1, MCP discovery, and the A2A Agent Card.
+The same contract is available through OpenAPI 3.1.1, MCP discovery, and the A2A Agent Card. Public learning methods are `shareExperience`, `experienceStatus`, and `revokeExperience`; none requires or accepts a Gateway API key.

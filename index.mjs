@@ -48,6 +48,21 @@ export class SaashAgentConnector {
     return this.request("/api/v1/invoke", { method: "POST", body: JSON.stringify({ engine_id, capability_id, payload, request_id }) });
   }
 
+  shareExperience({ receipt, experience }) {
+    if(this.apiKey) throw new Error("accountless GROW experience contribution must not attach an API key");
+    return this.request("/api/v1/grow/experiences",{method:"POST",body:JSON.stringify({receipt,experience})});
+  }
+
+  experienceStatus({ experience_id, revocation_token }) {
+    if(this.apiKey) throw new Error("public experience management must not attach an API key");
+    return this.request(`/api/v1/grow/experiences/${encodeURIComponent(experience_id)}/status`,{method:"POST",body:JSON.stringify({revocation_token})});
+  }
+
+  revokeExperience({ experience_id, revocation_token }) {
+    if(this.apiKey) throw new Error("public experience management must not attach an API key");
+    return this.request(`/api/v1/grow/experiences/${encodeURIComponent(experience_id)}/revoke`,{method:"POST",body:JSON.stringify({revocation_token})});
+  }
+
   async select(intent, options = {}) {
     const resolved = await this.resolve(intent, options);
     return resolved.matches?.[0] || null;
