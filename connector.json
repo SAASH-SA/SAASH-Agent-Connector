@@ -1,0 +1,21 @@
+{
+  "schema": "saash.agent-connector.install.v1",
+  "name": "SAASH Agent Connector",
+  "base_url": "https://saash-gateway.vercel.app",
+  "discovery_path": "/api/v1/discovery",
+  "manifest_path": "/.well-known/saash-agent-connector.json",
+  "agent_card_path": "/.well-known/agent-card.json",
+  "openapi_path": "/openapi.json",
+  "resolve_path": "/api/v1/connector/resolve",
+  "grow_invoke_path": "/api/v1/connector/invoke",
+  "invoke_path": "/api/v1/invoke",
+  "authentication": {
+    "discovery": "NONE",
+    "resolution": "NONE",
+    "safe_grow_invocation": "NONE_WITH_EXPLICIT_ACKNOWLEDGEMENT_AND_RATE_LIMIT",
+    "effectful_or_binding_invocation": "BEARER_GATEWAY_API_KEY"
+  },
+  "access_stage": "GROW",
+  "price_minor": 0,
+  "payment_collection": false
+}
