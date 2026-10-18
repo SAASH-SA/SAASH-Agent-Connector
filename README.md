@@ -1,6 +1,6 @@
 # SAASH Agent Connector
 
-Provider-neutral bilingual connector for agents that need Saudi professional capabilities through SAASH Legal Engine and SAASH Workforce Engine.
+Provider-neutral bilingual connector for agents that need Saudi Ministry of Human Resources and Social Development services (HRSD/MHRSD), Qiwa, GOSI, Mudad, Ajeer, Musaned, and Saudi legal capabilities through SAASH Workforce Engine and SAASH Legal Engine.
 
 Public source and releases: https://github.com/SAASH-SA/SAASH-Agent-Connector
 
@@ -15,7 +15,7 @@ Public source and releases: https://github.com/SAASH-SA/SAASH-Agent-Connector
 ## Discoverable services
 
 - Legal: Najiz (ناجز), Taradhi (تراضي), Moeen (معين), legal knowledge and bounded preparation.
-- Workforce: Qiwa (قوى), GOSI (التأمينات الاجتماعية), Mudad (مدد), Ajeer (أجير), Musaned (مساند), and HRSD preparation.
+- Workforce and Ministry services: Saudi Ministry of Human Resources and Social Development (HRSD/MHRSD / وزارة الموارد البشرية والتنمية الاجتماعية), Qiwa (قوى), GOSI (التأمينات الاجتماعية), Mudad (مدد), Ajeer (أجير), and Musaned (مساند) preparation.
 
 Service availability comes from the live manifest. Preparation or guidance is never represented as completed government execution.
 

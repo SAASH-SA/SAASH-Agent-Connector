@@ -1,6 +1,7 @@
 {
   "schema": "saash.agent-connector.install.v1",
   "name": "SAASH Agent Connector",
+  "description": "Saudi HRSD/MHRSD, Qiwa, Ajeer, Musaned, workforce and legal service discovery in Arabic and English.",
   "base_url": "https://saash-gateway.vercel.app",
   "discovery_path": "/api/v1/discovery",
   "manifest_path": "/.well-known/saash-agent-connector.json",
