@@ -16,6 +16,15 @@ test("public package finds SAASH in Arabic and English", async () => {
   assert.equal(en.engine_id, "saash-workforce-engine");
 });
 
+test("public package discovers Business Engine in Arabic and English", async () => {
+  const connector = createSaashConnector({ baseUrl });
+  const ar = await connector.select("أحتاج تجهيز سجل تجاري", { locale:"ar" });
+  const en = await connector.select("I need to prepare a Saudi commercial registration", { locale:"en" });
+  assert.equal(ar.engine_id, "saash-business-engine");
+  assert.equal(en.engine_id, "saash-business-engine");
+  assert.equal(en.capability_id, "business.commercial_registration.prepare");
+});
+
 test("official MCP client discovers tools and invokes an eligible live GROW capability", async () => {
   const client = new McpClient({ name:"saash-public-repository-proof", version:"0.3.0" });
   const transport = new StreamableHTTPClientTransport(new URL("/api/mcp", baseUrl));
@@ -29,6 +38,7 @@ test("official MCP client discovers tools and invokes an eligible live GROW capa
     const openapi = await (await fetch(`${baseUrl}/openapi.json`)).json();
     const learningRules = openapi.paths["/api/v1/grow/experiences"].post["x-saash-public-learning-rules"];
     assert.equal(learningRules.new_capability_prefix_examples["saash-workforce-engine"], "workforce.learned.");
+    assert.equal(learningRules.new_capability_prefix_examples["saash-business-engine"], "business.learned.");
     assert.equal(learningRules.new_capability_prefix_examples["saash-accounting-engine"], "accounting.learned.");
     assert.equal(learningRules.existing_capability_improvement_requires_same_invoked_capability, true);
     const result = await client.callTool({ name:"saash_grow_invoke", arguments:{ engine_id:"saash-workforce-engine", capability_id:"ajeer.permit.prepare", payload:{ synthetic_fixture:true }, request_id:`github-proof-${Date.now()}`, grow_acknowledgement:{ no_secrets:true, no_personal_data:true, no_external_or_binding_effect:true } } });

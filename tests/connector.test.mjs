@@ -27,7 +27,7 @@ test("connector exposes accountless experience contribution and management witho
 test("packaged metadata matches the expanded provider-aligned GROW policy", async () => {
   const metadata = JSON.parse(await readFile(new URL("../connector.json", import.meta.url), "utf8"));
   const readme = await readFile(new URL("../README.md", import.meta.url), "utf8");
-  assert.equal(metadata.version, "0.3.5");
+  assert.equal(metadata.version, "0.4.0");
   assert.equal(metadata.grow_experience_rules["example_saash-accounting-engine_new_capability_prefix"], "accounting.learned.");
   assert.equal(metadata.learned_capability_visibility, "IMMEDIATE_AFTER_SUCCESSFUL_RELEASE");
   assert.equal(metadata.capacity_policy.per_client_network_daily_invocation_limit, null);
